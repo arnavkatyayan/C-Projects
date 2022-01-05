@@ -1,2 +1,2 @@
 Hello World
-I am Learning GIT.
+I am Learning GIT and JAVA.
