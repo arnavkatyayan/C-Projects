@@ -32,29 +32,41 @@ class Game{
 		game();
 	}
 	public :void game(){
-		while(p1<=100||p2<=100){
+		while(p1<=100 && p2<=100){
 		int x1,x2;
 		cout<<"Player 1 turn"<<"\n";
 		srand(time(NULL));	
 		x1=rand()%6+1;
 		p1=x1+p1;
-		cout<<"Player 1 got"<<p1<<"\n";
+		cout<<"Player 1 got"<<x1<<"\n";
 		if(p1==7||p1==99){
+			cout<<"Bonus"<<"\n";
 			S_L();
 		}
+		cout<<"Total of Player1 will be"<<p1<<"\n";
+		Sleep(2000);
 		cout<<"Player 2 turn"<<"\n";
-		srand(time(NULL));	
+			
 		x2=rand()%6+1;
 		p2=x2+p2;
-		cout<<"Player 2 got"<<p2<<"\n";
+		cout<<"Player 2 got"<<x2<<"\n";
 		if(p2==7||p2==99){
+			cout<<"Bonus"<<"\n";
 			S_L();
 		}
+		cout<<"Total of Player2 will be"<<p2<<"\n";
+		Sleep(2000);
+	
+			
+			
+			
+	
 		
 		}
-	Display();
-		}
-	
+		Display();
+}
+
+
 	public :void S_L(){
 		if(p1==7){
 			p1=56;
@@ -84,37 +96,24 @@ class Game{
 };
 int main(){
 	
-	Game g;
-	int b;
-	cout<<"--Welcome to underground snake and ladder--"<<"\n";
-	int *ptr;
-	int n;
-	cout<<"Enter the number of bet you will be having";
-	cin>>n;
-	ptr=new int[n];
-	cout<<"Enter the different amounts that you will be gambling for"<<"\n";
-	for(int i=0;i<n;i++){
-		cin>>ptr[i];
-	}
-	cout<<"Now lets randomly select what amount we'd use for betting"<<"\n";
-	int y;
-	for(int j=0;j<n;j++){
-	srand(time(NULL));	
-	y=rand()%1000+1;
-	ptr[j]=y*1000;
-}
-	int x;
+Game g;
+cout<<"---Welcome to underground Snake and Ladder Game---"<<"\n";
+long p;
+cout<<"Now we will get the total amount some proportion of it will go for game and rest for us"<<"\n";
+cout<<"Maximum range is 10 lakh"<<"\n";
+srand(time(NULL));	
+	p=rand()%1000000*10;
+	cout<<"The amount estimated that got generated through internet"<<p<<"\n";
+	
 
-	srand(time(NULL));	
-	x=rand()%n+1;
-	cout<<x<<"\n";
-	cout<<"So we have got the betting amount"<<"\n";
-	for(int j=0;j<n;j++){
-		b=ptr[x];
-	}
-	Sleep(2000);
-	cout<<b<<"\n";
-	g.Add();
-	
+cout<<"Now we will find out what will be betting amount"<<"\n";
+cout<<"In 5 Seconds we will get the betting amount"<<"\n";
+Sleep(5000);
+long y;
+y=rand()%p;
+cout<<y<<"\n";
+g.Add();	
+cout<<"Congrtulations for winning"<<"Rs"<<""<<y;
 	
 }
+
